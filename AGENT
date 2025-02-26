@@ -35,7 +35,11 @@ ls
 cat id_rsa.pub ( copy public key )
 5. Go to jenkins-slave ec2-instance
 
-vi /home/ubuntu/.ssh/authorized_keys ( paste the public key you copied from Jenkins Master )
+vi /home/ubuntu/.ssh/authorized_keys 
+enter in the file ( paste the public key you copied from Jenkins Master )
+
+i for insert
+
 6. Go to jenkins-master ec2-instance
 
 ssh ubuntu@PUB-IP-SLAVE
@@ -67,6 +71,15 @@ Jenkins Credentials Provider: Jenkins
 Host Key Verification Strategy = non verifying
 
 save
+
+
+## IN MASTER 
+install docker 
+sudo usermod -aG docker jenkins
+sudo systemctl restart docker
+sudo systemctl restart jenkins
+
+
 
 Running a Pipeline Job for Nodejs App on a Jenkins Agent
 
